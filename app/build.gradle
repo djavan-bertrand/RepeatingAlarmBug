@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "sousoum.com.repeatingalarmbug.repeating.elapsed"
+        applicationId "sousoum.com.repeatingalarmbug.reschedule.exact.elapsed"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1

@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import sousoum.com.repeatingalarmbug.repeating.elapsed.R;
+import sousoum.com.repeatingalarmbug.reschedule.exact.elapsed.R;
 
 
 public class MainActivity extends AppCompatActivity {
