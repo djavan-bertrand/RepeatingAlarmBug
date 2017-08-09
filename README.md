@@ -27,3 +27,27 @@ The `AlarmService` post a notification with the name of the implementation. On t
 ### Branches
 
 To test multiple Alarm implementations, I have one branch per implementation. Each implementation has a different package name to allow testing multiple implementations on the same device. Each implementation has also an implementation name which is printed in the notification.
+
+#### Repeat elapsed (also on master)
+
+This implementation uses [the (inexact) repeating alarm of the type `ELAPSED_REALTIME_WAKEUP`](https://developer.android.com/reference/android/app/AlarmManager.html#setInexactRepeating(int,%20long,%20long,%20android.app.PendingIntent)).
+
+It is available on the [repeat_elapsed](https://github.com/djavan-bertrand/RepeatingAlarmBug/tree/repeat_elapsed) branch.
+
+#### Reschedule exact elapsed
+
+This implementation uses [the exact alarm of the type `ELAPSED_REALTIME_WAKEUP`](https://developer.android.com/reference/android/app/AlarmManager.html#setExact(int,%20long,%20android.app.PendingIntent)). It sets a new alarm each time the notification is displayed.
+
+It is available on the [reschedule_exact_elapsed](https://github.com/djavan-bertrand/RepeatingAlarmBug/tree/reschedule_exact_elapsed) branch.
+
+#### Reschedule inexact elapsed
+
+This implementation uses [the inexact alarm of the type `ELAPSED_REALTIME_WAKEUP`](https://developer.android.com/reference/android/app/AlarmManager.html#set(int,%20long,%20android.app.PendingIntent)). It sets a new alarm each time the notification is displayed.
+
+It is available on the [reschedule_inexact_elapsed](https://github.com/djavan-bertrand/RepeatingAlarmBug/tree/reschedule_inexact_elapsed) branch.
+
+#### Reschedule exact and allow while idle elapsed
+
+This implementation uses [the exact alarm of the type `ELAPSED_REALTIME_WAKEUP` which is allowed to be executed even when the system is in low-power idle modes](https://developer.android.com/reference/android/app/AlarmManager.html#setExact(int,%20long,%20android.app.PendingIntent)). It sets a new alarm each time the notification is displayed.
+
+It is available on the [reschedule_exact_idle_elapsed](https://github.com/djavan-bertrand/RepeatingAlarmBug/tree/reschedule_exact_idle_elapsed) branch.
