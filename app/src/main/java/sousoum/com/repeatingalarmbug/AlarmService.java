@@ -9,7 +9,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
-import sousoum.com.repeatingalarmbug.repeating.elapsed.R;
+import sousoum.com.repeatingalarmbug.reschedule.inexact.elapsed.R;
 
 public class AlarmService extends IntentService {
 
@@ -32,5 +32,9 @@ public class AlarmService extends IntentService {
         NotificationManager notificationManager = (NotificationManager) getSystemService(
                 Context.NOTIFICATION_SERVICE);
         notificationManager.notify(333, notificationBuilder.build());
+
+        Log.d("AlarmBug", "Rescheduling the alarm");
+        // Schedule another alarm
+        AlarmScheduler.schedule(this);
     }
 }

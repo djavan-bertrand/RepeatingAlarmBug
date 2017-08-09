@@ -26,9 +26,9 @@ class AlarmScheduler {
         Log.d("AlarmBug", "Cancel the pending intent");
         alarmManager.cancel(pending);
 
-        Log.d("AlarmBug", "Set inexact repeating in elapsed + 1 minute");
-        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-                SystemClock.elapsedRealtime() + repeatTime, repeatTime, pending);
+        Log.d("AlarmBug", "Set inexact in elapsed + 1 minute");
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                SystemClock.elapsedRealtime() + repeatTime, pending);
     }
 
 }
