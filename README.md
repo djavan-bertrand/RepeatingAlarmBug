@@ -1,8 +1,24 @@
-# Repeating Alarm Bug
+# Repeating Alarm Bug (fixed)
 
 This project is a test to put in light a bug I have with the Android **AlarmManager**.
 
 I might be using it incorrectly so, please, if you something wrong please ping me.
+
+**Update:** The root cause was not in the way of implementing the Alarms... Samsung's aggressive battery optimisation is responsible. See the `Conclusion` to know how to fix it.
+
+# Conclusion
+
+**All types of alarms are well implemented. In fact, the problem only happens on Samsung devices (booooh!). In order to make them work more than 5 days, you'll have to disable the Battery Optimization on the app:**
+
+* Go to "device maintenance"
+* Click on "Battery"
+* Scroll down to "Unmonitored apps"
+* Click on the up right button, and click on "add"
+* Add your app.
+
+**After that, your alarms will be infinite, yay \o/**
+
+# Description of the problem
 
 ## What I need
 I need an alarm to be triggered repeatedly for the whole smartphone life. The alarm should show a notification.
